@@ -1,6 +1,6 @@
 {
   "name": "cli-inquirer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CLI parser for nodejs applications.",
   "keywords": ["cli parser", "cli", "user input parser"],
   "homepage": "https://github.com/PedroHenriques/cli-inquirer",
@@ -8,6 +8,7 @@
   "license": "MIT",
   "author": "Pedro Henriques <pedro@pedrojhenriques.com> (http://pedrojhenriques.com)",
   "main": "lib/index.js",
+  "types": "lib/index.d.js",
   "directories": {
     "lib": "lib/",
     "test": "test/",

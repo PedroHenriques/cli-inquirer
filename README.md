@@ -11,6 +11,8 @@ The easiest way to start using this package is to install it using **npm**.
 
 In you application run **`npm i cli-inquirer`** and then require it in your code with **`const { inquirer } = require('cli-inquirer');`**.
 
+This package has typescript declaration files, so if you're writing typescript code you can use **`import { inquirer } from 'cli-inquirer';`**.
+
 ## Summary of what this package does
 
 When the exported function is called, it will prompt the user (via the command line) for an instruction.
