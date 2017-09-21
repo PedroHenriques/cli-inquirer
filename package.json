@@ -1,0 +1,45 @@
+{
+  "name": "cli-inquirer",
+  "version": "1.0.0",
+  "description": "A CLI parser for nodejs applications.",
+  "keywords": ["cli parser", "cli", "user input parser"],
+  "homepage": "https://github.com/PedroHenriques/cli-inquirer",
+  "bugs": "https://github.com/PedroHenriques/cli-inquirer/issues",
+  "license": "MIT",
+  "author": "Pedro Henriques <pedro@pedrojhenriques.com> (http://pedrojhenriques.com)",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib/",
+    "test": "test/",
+    "example": "examples/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:PedroHenriques/cli-inquirer.git"
+  },
+  "scripts": {
+    "prestart": "npm run build && npm run lint",
+    "start": "node lib/index.js",
+    "run": "node lib/index.js",
+    "pretest": "npm run build",
+    "test": "mocha",
+    "mocha": "mocha",
+    "test:all": "npm run mocha ./test/**/*.js",
+    "test:unit": "npm run mocha ./test/unit/*.js",
+    "test:acceptance": "npm run mocha ./test/acceptance/*.js",
+    "build": "tsc",
+    "dev": "node ./node_modules/ts-node/dist/bin.js src/index.ts",
+    "lint": "tslint -c ./tslint.json -p ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.28",
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3",
+    "proxyquire": "^1.8.0",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.7.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "typescript": "^2.5.2"
+  },
+  "private": false
+}
