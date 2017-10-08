@@ -1,1 +1,0 @@
-export { inquirer } from './inquirer';
