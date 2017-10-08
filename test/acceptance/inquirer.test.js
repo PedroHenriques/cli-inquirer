@@ -15,28 +15,34 @@ describe('inquirer()', function () {
       flags: [['-t', '../test/path']]
     };
 
-    return(
-      new Promise((resolve, reject) => {
-        const proc = spawn('node', [path.join(__dirname, 'proc.js')], { stdio: 'pipe' });
-        
-        proc.stdout.on('data', (output) => {
-          proc.stdin.write('help file dir -t ../test/path\r');
-          proc.stdout.once('data', (output) => {
-            let actualValue = '';
-            try {
-              actualValue = JSON.parse(output.toString('utf8').trim());
-            } catch (e) {
-              actualValue = output.toString('utf8').trim();
-            }
+    const asyncProc = new Promise((resolve, reject) => {
+      const proc = spawn('node', [path.join(__dirname, 'proc.js')], { stdio: 'pipe' });
+      
+      proc.stdout.on('data', (output) => {
+        proc.stdin.write('help file dir -t ../test/path\r');
+        proc.stdout.once('data', (output) => {
+          let actualValue = '';
+          try {
+            actualValue = JSON.parse(output.toString('utf8').trim());
+          } catch (e) {
+            actualValue = output.toString('utf8').trim();
+          }
+          proc.kill('SIGINT');
 
-            try {
-              assert.deepEqual(actualValue, expectedValue);
-              resolve();
-            } catch (e) {
-              reject(e);
-            }
-          });
+          try {
+            resolve(actualValue);
+          } catch (e) {
+            reject(e);
+          }
         });
+      });
+    });
+
+    return(
+      asyncProc.then((actualValue) => {
+        assert.deepEqual(actualValue, expectedValue);
+      }, () => {
+        assert.fail();
       })
     );
   });

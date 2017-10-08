@@ -148,4 +148,4 @@ For a user input of `create file -f --target ./src/newfile.js` the promise would
 
 1. `cd` into the package directory
 2. run `npm install`
-3. run `npm run test -- ./test/**/*.js`
+3. run `npm run test -- ./test/**/*.test.js`
