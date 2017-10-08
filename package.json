@@ -1,8 +1,12 @@
 {
   "name": "cli-inquirer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A CLI parser for nodejs applications.",
-  "keywords": ["cli parser", "cli", "user input parser"],
+  "keywords": [
+    "cli parser",
+    "cli",
+    "user input parser"
+  ],
   "homepage": "https://github.com/PedroHenriques/cli-inquirer",
   "bugs": "https://github.com/PedroHenriques/cli-inquirer/issues",
   "license": "MIT",
@@ -33,14 +37,14 @@
     "lint": "tslint -c ./tslint.json -p ./tsconfig.json"
   },
   "devDependencies": {
-    "@types/node": "^8.0.28",
+    "@types/node": "^8.0.33",
     "chai": "^4.1.2",
-    "mocha": "^3.5.3",
+    "mocha": "^4.0.1",
     "proxyquire": "^1.8.0",
     "ts-node": "^3.3.0",
     "tslint": "^5.7.0",
     "tslint-eslint-rules": "^4.1.1",
-    "typescript": "^2.5.2"
+    "typescript": "^2.5.3"
   },
   "private": false
 }

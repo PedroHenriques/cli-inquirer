@@ -4,6 +4,7 @@
 	"compilerOptions": {
 		"module": "commonjs",
 		"target": "es6",
+		"lib": ["esnext"],
 		"outDir" : "lib",
 		"alwaysStrict" : true,
 		"noEmitOnError" : true,
